@@ -12,8 +12,10 @@ function Form() {
   };
 
   const addTask = (e) => {
-    setTask([...task, inputText]);
-    setInputText("");
+    if (inputText && !task.includes(inputText)) {
+      setTask([...task, inputText]);
+      setInputText("");
+    }
   };
 
   const deleteTask = (key) => {
